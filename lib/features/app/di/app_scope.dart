@@ -1,5 +1,5 @@
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/config/app_config.dart';
@@ -63,9 +63,9 @@ class AppScope implements IAppScope {
 
     dio.options
       ..baseUrl = Environment<AppConfig>.instance().config.url
-      ..connectTimeout = timeout.inMilliseconds
-      ..receiveTimeout = timeout.inMilliseconds
-      ..sendTimeout = timeout.inMilliseconds;
+      ..connectTimeout = timeout
+      ..receiveTimeout = timeout
+      ..sendTimeout = timeout;
 
     (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
         (client) {
@@ -115,6 +115,6 @@ abstract class IAppScope {
   /// A service that stores and retrieves app theme mode.
   IThemeService get themeService;
 
-  /// Init theme service with theme from storage or default value
+  /// Init theme service with theme from storage or default value.
   Future<void> initTheme();
 }

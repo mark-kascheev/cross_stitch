@@ -5,19 +5,4 @@
 /// /// Name description.
 /// static const String screenName = 'screenNameRoute';
 /// ```
-abstract class AppRouteNames {
-  /// TempScreen route name
-  static const String tempScreen = 'tempRouter';
-
-  /// DebugScreen route name
-  static const String debugScreen = 'debugRouter';
-
-  /// DashScreen route name
-  static const String dashScreen = 'dashRouter';
-
-  /// InfoScreen route name
-  static const String infoScreen = 'infoRouter';
-
-  /// LogHistoryScreen route name
-  static const String logHistoryScreen = 'logHistoryRouter';
-}
+abstract class AppRouteNames {}
